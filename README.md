@@ -1,5 +1,6 @@
 # MateCat.Net
-![MateCat](https://github.com/IvAlex1986/MateCat.Net/blob/master/MateCatLogo.jpg)
+![MateCat](https://github.com/IvAlex1986/MateCat.Net/blob/master/MateCatLogo.jpg =250x)
+<br />
 **MateCat.Net** это wrapper написанный для .NET, который работает с онлайн CAT приложением [MateCat](https://www.matecat.com/). Официальную документацию по использованию API можно посмотреть [here](https://www.matecat.com/api/docs)
 
 #Installation
