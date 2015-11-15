@@ -8,7 +8,7 @@ namespace MateCat.Net
     public interface IMateCatApi
     {
         /// <summary>
-        /// Ges the base URL.
+        /// Get the base URL.
         /// </summary>
         /// <value>
         /// The base URL.
@@ -16,7 +16,7 @@ namespace MateCat.Net
         String BaseUrl { get; }
 
         /// <summary>
-        /// Creates the project.
+        /// Create the project.
         /// </summary>
         /// <param name="files">The file(s) to be uploaded.</param>
         /// <param name="projectName">The name of the project you want create.</param>
@@ -40,7 +40,7 @@ namespace MateCat.Net
             SegmentationRule segmantationRule = SegmentationRule.General);
 
         /// <summary>
-        /// Creates the project.
+        /// Create the project.
         /// </summary>
         /// <param name="files">The file(s) to be uploaded.</param>
         /// <param name="projectName">The name of the project you want create.</param>

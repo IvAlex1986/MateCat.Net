@@ -29,6 +29,15 @@ namespace MateCat.Net.Models
         public AnalysisProjectStatus Status { get; set; }
 
         /// <summary>
+        /// Gets or sets the message. Error description for <see cref="Status"/> is Failed
+        /// </summary>
+        /// <value>
+        /// The message.
+        /// </value>
+        [DataMember(Name = "message")]
+        public String Message { get; set; }
+
+        /// <summary>
         /// A link to the analyze page; it's a human readable version of this API output.
         /// </summary>
         /// <value>
