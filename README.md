@@ -1,7 +1,7 @@
 # MateCat.Net
 <img src="https://github.com/IvAlex1986/MateCat.Net/blob/master/MateCatLogo.jpg" width="250" />
 <br />
-**MateCat.Net** is a wrapper made for .NET, which works with online CAT-Tool [MateCat](https://www.matecat.com/). The official documentation of using API see [here](https://www.matecat.com/api/docs)
+**MateCat.Net** is a wrapper made for .NET, which works with online CAT-Tool [MateCat](https://www.matecat.com/). The official documentation of using API see [here](https://www.matecat.com/api/docs).
 
 #Installation
 Installation is performed via NuGet [package](https://www.nuget.org/packages/MateCat.Net).

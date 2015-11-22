@@ -40,16 +40,17 @@ namespace MateCat.Net
             Boolean useMemoryServer = true,
             Boolean useMachineTranslation = true,
             String privateKey = "",
-            SegmentationRule segmantationRule = SegmentationRule.General)
+            SegmentationRule segmantationRule = SegmentationRule.General,
+            String ownerEmail = "anonymous")
         {
             var url = String.Concat(BaseUrl, "new");
 
             var httpFiles = files.Select(n => new HttpPostFile
-                {
-                    Name = Path.GetFileNameWithoutExtension(n.FileName),
-                    FileName = n.FileName,
-                    Stream = n.Stream
-                })
+            {
+                Name = Path.GetFileNameWithoutExtension(n.FileName),
+                FileName = n.FileName,
+                Stream = n.Stream
+            })
                 .ToList();
 
 
@@ -62,12 +63,38 @@ namespace MateCat.Net
                 { "mt_engine", BooleanToIntegerString(useMachineTranslation) },
                 { "private_tm_key", privateKey },
                 { "subject", subject },
-                { "segmentation_rule", segmantationRule.GetAttribute<CodeAttribute>().Value }
+                { "segmentation_rule", segmantationRule.GetAttribute<CodeAttribute>().Value },
+                { "owner_email", ownerEmail }
             };
 
             var response = HttpHelper.UploadFiles(url, httpFiles, parameters);
 
             return DesirializeResponse<Project>(response);
+        }
+
+        public Project CreateProject(
+            IEnumerable<ProjectFile> files,
+            String projectName,
+            String sourceLanguage,
+            String targetLanguage,
+            SupportedSubject subject = SupportedSubject.General,
+            Boolean useMemoryServer = true,
+            Boolean useMachineTranslation = true,
+            String privateKey = "",
+            SegmentationRule segmantationRule = SegmentationRule.General,
+            String ownerEmail = "anonymous")
+        {
+            return CreateProject(
+                files,
+                projectName,
+                sourceLanguage,
+                targetLanguage,
+                subject.GetAttribute<CodeAttribute>().Value,
+                useMemoryServer,
+                useMachineTranslation,
+                privateKey,
+                segmantationRule,
+                ownerEmail);
         }
 
         public Project ChangeProjectPassword(Int32 id, String oldPassword, String newPassword)
@@ -84,29 +111,6 @@ namespace MateCat.Net
             var response = HttpHelper.Post(url, parameters);
 
             return DesirializeResponse<Project>(response);
-        }
-
-        public Project CreateProject(
-            IEnumerable<ProjectFile> files,
-            String projectName,
-            String sourceLanguage,
-            String targetLanguage,
-            SupportedSubject subject = SupportedSubject.General,
-            Boolean useMemoryServer = true,
-            Boolean useMachineTranslation = true,
-            String privateKey = "",
-            SegmentationRule segmantationRule = SegmentationRule.General)
-        {
-            return CreateProject(
-                files,
-                projectName,
-                sourceLanguage,
-                targetLanguage,
-                subject.GetAttribute<CodeAttribute>().Value,
-                useMemoryServer,
-                useMachineTranslation,
-                privateKey,
-                segmantationRule);
         }
 
         public String GetProjectStatusString(Int32 id, String password)

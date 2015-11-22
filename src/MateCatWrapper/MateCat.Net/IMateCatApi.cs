@@ -8,7 +8,7 @@ namespace MateCat.Net
     public interface IMateCatApi
     {
         /// <summary>
-        /// Get the base URL.
+        /// Ges the base URL.
         /// </summary>
         /// <value>
         /// The base URL.
@@ -16,7 +16,7 @@ namespace MateCat.Net
         String BaseUrl { get; }
 
         /// <summary>
-        /// Create the project.
+        /// Creates the project.
         /// </summary>
         /// <param name="files">The file(s) to be uploaded.</param>
         /// <param name="projectName">The name of the project you want create.</param>
@@ -27,6 +27,7 @@ namespace MateCat.Net
         /// <param name="useMachineTranslation">Identifier for Machine Translation Service <c>false</c> means disabled, <c>true</c> means get MT from MyMemory)</param>
         /// <param name="privateKey">Private Key(s) for MyMemory. Fill this field with your MyMemory private key if you already have one or set to new to create a new one. Multiple keys must be comma separated. Up to 5 keys allowed.</param>
         /// <param name="segmantationRule">The segmentation rule you want to use to parse your file.</param>
+        /// <param name="ownerEmail">The email of the owner of the project.</param>
         /// <returns>The metadata for the created project.</returns>
         Project CreateProject(
             IEnumerable<ProjectFile> files,
@@ -37,10 +38,11 @@ namespace MateCat.Net
             Boolean useMemoryServer = true,
             Boolean useMachineTranslation = true,
             String privateKey = "",
-            SegmentationRule segmantationRule = SegmentationRule.General);
+            SegmentationRule segmantationRule = SegmentationRule.General,
+            String ownerEmail = "anonymous");
 
         /// <summary>
-        /// Create the project.
+        /// Creates the project.
         /// </summary>
         /// <param name="files">The file(s) to be uploaded.</param>
         /// <param name="projectName">The name of the project you want create.</param>
@@ -51,6 +53,7 @@ namespace MateCat.Net
         /// <param name="useMachineTranslation">Identifier for Machine Translation Service <c>false</c> means disabled, <c>true</c> means get MT from MyMemory)</param>
         /// <param name="privateKey">Private Key(s) for MyMemory. Fill this field with your MyMemory private key if you already have one or set to new to create a new one. Multiple keys must be comma separated. Up to 5 keys allowed.</param>
         /// <param name="segmantationRule">The segmentation rule you want to use to parse your file.</param>
+        /// <param name="ownerEmail">The email of the owner of the project.</param>
         /// <returns>The metadata for the created project.</returns>
         Project CreateProject(
             IEnumerable<ProjectFile> files,
@@ -61,7 +64,8 @@ namespace MateCat.Net
             Boolean useMemoryServer = true,
             Boolean useMachineTranslation = true,
             String privateKey = "",
-            SegmentationRule segmantationRule = SegmentationRule.General);
+            SegmentationRule segmantationRule = SegmentationRule.General,
+            String ownerEmail = "anonymous");
 
         /// <summary>
         /// Change the password of a project.
