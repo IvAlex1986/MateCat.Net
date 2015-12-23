@@ -20,7 +20,7 @@ namespace MateCat.Net.Tests
         protected readonly CreateProjectTestModel CreateProjectTestModel = new CreateProjectTestModel();
         protected readonly GetProjectStatusTestModel ReadStatusTestModel = new GetProjectStatusTestModel();
 
-        private Project _project;
+        protected Project Project;
 
         protected override void Given()
         {
@@ -31,12 +31,12 @@ namespace MateCat.Net.Tests
         {
             var projectFiles = new List<ProjectFile> { new ProjectFile(FilePath) };
 
-            _project = SUT.CreateProject(projectFiles, ProjectName,
+            Project = SUT.CreateProject(projectFiles, ProjectName,
                 CreateProjectTestModel.SourceLanguage, CreateProjectTestModel.TargetLanguage, CreateProjectTestModel.SupportedSubject,
                 CreateProjectTestModel.UseMemoryServer, CreateProjectTestModel.UseMachineTranslation, CreateProjectTestModel.PrivateKey, CreateProjectTestModel.SegmantationRule);
 
-            ReadStatusTestModel.ProjectId = _project.Id;
-            ReadStatusTestModel.ProjectPassword = _project.Password;
+            ReadStatusTestModel.ProjectId = Project.Id;
+            ReadStatusTestModel.ProjectPassword = Project.Password;
             ReadStatusTestModel.Save();
         }
 
@@ -48,19 +48,19 @@ namespace MateCat.Net.Tests
         [Test]
         public void ProjectNotNull()
         {
-            _project.ShouldNotBeNull();
+            Project.ShouldNotBeNull();
         }
 
         [Test]
         public void ProjectStatusIsOk()
         {
-            _project.Status.ShouldEqual(CreationProjectStatus.Ok);
+            Project.Status.ShouldEqual(CreationProjectStatus.Ok);
         }
 
         [Test]
-        public void ProjectMessagesIsEmpty()
+        public void ProjectMessagesNotEmpty()
         {
-            _project.Message.ShouldNotBeEmpty();
+            Project.Message.ShouldNotBeEmpty();
         }
     }
 }

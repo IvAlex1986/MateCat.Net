@@ -17,7 +17,13 @@ namespace MateCat.Net.Models
         public ProjectFile(FileInfo fileInfo)
         {
             FileName = fileInfo.Name;
-            Stream = fileInfo.OpenRead();
+
+            using (var fileStream = fileInfo.OpenRead())
+            {
+                Stream = new MemoryStream();
+                fileStream.CopyTo(Stream);
+                Stream.Position = 0;
+            }
         }
 
         public ProjectFile(String filePath)

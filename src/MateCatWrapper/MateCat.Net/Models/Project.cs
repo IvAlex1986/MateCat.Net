@@ -1,5 +1,6 @@
 ﻿using MateCat.Net.Enums;
 using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace MateCat.Net.Models
@@ -44,6 +45,15 @@ namespace MateCat.Net.Models
         /// The status.
         /// </value>
         public CreationProjectStatus Status { get; set; }
+
+        /// <summary>
+        /// If you specified 'new' as one or more value in 'privateKey' parameter, the new created keys are returned.
+        /// </summary>
+        /// <value>
+        /// The new keys.
+        /// </value>
+        [DataMember(Name = "new_keys")]
+        public List<String> NewKeys { get; set; }
 
         #region Private
 

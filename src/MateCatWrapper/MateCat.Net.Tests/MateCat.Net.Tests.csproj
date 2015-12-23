@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
+    <Compile Include="CreateProjectWithKeysTest.cs" />
     <Compile Include="CreateProjectTest.cs" />
     <Compile Include="GetProjectStatusTest.cs" />
     <Compile Include="Models\CreateProjectTestModel.cs" />

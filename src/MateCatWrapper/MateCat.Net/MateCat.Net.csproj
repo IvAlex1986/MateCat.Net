@@ -44,6 +44,7 @@
     <Compile Include="Attributes\CodeAttribute.cs" />
     <Compile Include="Enums\AnalysisProjectPerspectiveStatus.cs" />
     <Compile Include="Enums\AnalysisProjectStatus.cs" />
+    <Compile Include="Enums\ProjectKeyMode.cs" />
     <Compile Include="Enums\QualityProjectStatus.cs" />
     <Compile Include="Enums\QualityProjectType.cs" />
     <Compile Include="Enums\SegmentationRule.cs" />
@@ -53,9 +54,11 @@
     <Compile Include="MateCatApi.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\HttpPostFile.cs" />
+    <Compile Include="MateCatApiHelper.cs" />
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectFile.cs" />
     <Compile Include="Enums\CreationProjectStatus.cs" />
+    <Compile Include="Models\ProjectKey.cs" />
     <Compile Include="Models\ProjectStatus.cs" />
     <Compile Include="Models\ProjectStatusData.cs" />
     <Compile Include="Models\ProjectStatusDataJob.cs" />

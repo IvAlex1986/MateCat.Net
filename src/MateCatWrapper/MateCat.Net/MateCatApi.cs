@@ -46,13 +46,12 @@ namespace MateCat.Net
             var url = String.Concat(BaseUrl, "new");
 
             var httpFiles = files.Select(n => new HttpPostFile
-            {
-                Name = Path.GetFileNameWithoutExtension(n.FileName),
-                FileName = n.FileName,
-                Stream = n.Stream
-            })
+                {
+                    Name = Path.GetFileNameWithoutExtension(n.FileName),
+                    FileName = n.FileName,
+                    Stream = n.Stream
+                })
                 .ToList();
-
 
             var parameters = new NameValueCollection
             {
@@ -93,6 +92,31 @@ namespace MateCat.Net
                 useMemoryServer,
                 useMachineTranslation,
                 privateKey,
+                segmantationRule,
+                ownerEmail);
+        }
+
+        public Project CreateProject(
+            IEnumerable<ProjectFile> files,
+            String projectName,
+            String sourceLanguage,
+            String targetLanguage,
+            String subject,
+            Boolean useMemoryServer = true,
+            Boolean useMachineTranslation = true,
+            IEnumerable<ProjectKey> privateKey = null,
+            SegmentationRule segmantationRule = SegmentationRule.General,
+            String ownerEmail = "anonymous")
+        {
+            return CreateProject(
+                files,
+                projectName,
+                sourceLanguage,
+                targetLanguage,
+                subject,
+                useMemoryServer,
+                useMachineTranslation,
+                (privateKey != null) ? String.Join(",", privateKey.Select(n => n.ToString())) : String.Empty,
                 segmantationRule,
                 ownerEmail);
         }

@@ -7,9 +7,15 @@ namespace MateCat.Net.Enums
     /// </summary>
     public enum SegmentationRule
     {
+        /// <summary>
+        /// General
+        /// </summary>
         [Code(Value = "")]
         General,
 
+        /// <summary>
+        /// Patent
+        /// </summary>
         [Code(Value = "patent")]
         Patent
     }
