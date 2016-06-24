@@ -1,2 +1,2 @@
 language: csharp
-solution: MateCatWrapper.sln
+solution: ./src/MateCatWrapper.sln
