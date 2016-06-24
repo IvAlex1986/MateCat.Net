@@ -5,6 +5,9 @@
 <br />
 The official documentation of using API see [here](https://www.matecat.com/api/docs).
 
+# Build Status
+[![Build Status](https://travis-ci.org/IvAlex1986/MateCat.Net.svg?branch=master)](https://travis-ci.org/IvAlex1986/MateCat.Net)
+
 #Installation
 Installation is performed via NuGet [package](https://www.nuget.org/packages/MateCat.Net).
 ```
