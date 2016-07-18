@@ -14,7 +14,7 @@ Installation is performed via NuGet [package](https://www.nuget.org/packages/Mat
 PM> Install-Package MateCat.Net
 ```
 
-#Example
+# Example
 
 Creating new MateCat project:
 ```c#
@@ -78,5 +78,5 @@ namespace MateCat.Net.Example
 }
 ```
 
-#License
+# License
 This project is licensed under the [MIT license](https://github.com/IvAlex1986/MateCat.Net/blob/master/LICENSE).
